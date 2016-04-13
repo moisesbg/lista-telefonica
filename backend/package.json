@@ -1,0 +1,12 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "No sexto episódio da série AngularJS, nós vamos falar sobre como integrar com o back-end por AJAX, utilizando o serviço $http.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^3.x"
+  }
+}

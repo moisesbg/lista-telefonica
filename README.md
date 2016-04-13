@@ -1,0 +1,2 @@
+Fontes das vídeo aulas do Rodrigo Branas sobre AngularJs, com adaptações para criar uma página de erros genérica (no momento esta parte do código está com problemas).
+As vídeo aulas encontram-se em https://www.youtube.com/user/rodrigobranas.

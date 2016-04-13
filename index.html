@@ -1,0 +1,42 @@
+
+<!-- ngBind - pega algo do $scope e exibe (passa pra view)
+     ngModel - faz o crontrário do ngBind, pega algo da view e defne (passa pra $scope)
+
+    Aula 14 - parei no minuto 23 -->
+
+<html ng-app="listaTelefonica">
+    <meta charset="utf-8">
+    <head>
+       
+        <title>Lista Telefonica</title>
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular/angular-messages.js"></script>
+        <script src="lib/angular/angular-locale_pt-br.js"></script>
+        <script src="lib/angular/angular-route.js"></script>
+        <script src="lib/serialGenerator/serialGenerator.js"></script>
+        <script src="lib/ui/ui.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers/listaTelefonicaCtrl.js"></script>
+        <script src="js/controllers/novoContatoCtrl.js"></script>
+        <script src="js/controllers/detalhesContatoCtrl.js"></script>
+        <script src="js/services/contatosAPIService.js"></script>
+        <script src="js/services/operadorasAPIService.js"></script>
+        <script src="js/configValue.js"></script>
+        <script src="js/filters/nameFilter.js"></script>
+        <script src="js/filters/ellipsisFilter.js"></script>
+        <script src="js/directives/uiAlertDirective.js"></script>
+        <script src="js/directives/uiDateDirective.js"></script>
+        <script src="js/interceptors/ApiInterceptor.js"></script>
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="css/app.css"/>
+        <link rel="stylesheet" type="text/css" href="css/ui.css"/>
+        
+    </head>
+    <body>
+        
+        <div ng-view></div>
+
+        <!-- O comando abaixo funciona no FireFox, mas não no Chrome -->
+          <div ng-include="'view/footer.html'"></div> 
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<div class="jumbotron">
+    <form name="contatoForm">
+        <input class="form-control" type="text" ng-model="contato.nome" name="inome" placeholder="Nome:" ng-required="true" ng-minlength="3" />
+        <input class="form-control" type="text" ng-model="contato.telefone" name="itelefone" placeholder="Telefone:" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
+        <input class="form-control" type="text" ng-model="contato.data" name="idata" placeholder="Data:" ui-date/>
+        <!-- o select abaixo, gera o código da operadora 
+        <select class="form-control" ng-model="contato.operadora" ng-options="operadora.codigo as operadora.nome for operadora in operadoras">
+            <option value="">Selecione uma operadora</option>
+        </select> -->
+
+        <!-- o select abaixo, gera um objeto do tipo operadora com nome e código da operadora 
+        <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">
+            <option value="">Selecione uma operadora</option>
+        </select> -->
+
+        <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome + ' ( ' + (operadora.preco | currency) + ' ) ' group by operadora.categoria for operadora in operadoras |orderBy:'nome'">
+            <option value="">Selecione uma operadora</option>
+        </select>
+    </form>
+
+    <hr/>
+
+    <div ng-messages="contatoForm.inome.$error"  ng-show="contatoForm.inome.$dirty" >
+        <div ng-message="required" class="alert alert-danger">
+            Por favor, preencha o campo nome.
+        </div>
+        <div ng-message="minlength" class="alert alert-danger">
+            O campo nome deve ter no mínimo 3 caracteres.
+        </div>
+    </div>  
+
+    <div ng-show="contatoForm.itelefone.$error.required && contatoForm.itelefone.$dirty" class="alert alert-danger">
+        Por favor, preencha o campo telefone.
+    </div>
+    <div ng-show="contatoForm.itelefone.$error.pattern" class="alert alert-danger">
+        O campo telefone deve ter o formato NNNNN-NNNN.
+    </div>
+    <!-- propriedade $dirty -> indica se o campo já foi acessado alguma vez
+    propriedade $pristine -> indica se o campo nunca foi acessado (está virgem...) 
+    Ambas são booleanas -->
+
+    <button class="btn btn-primary btn-block " ng-click= "adicionarContato(contato)" ng-disabled="contatoForm.$invalid">Adicionar Contato</button>
+    {{contatoForm.$invalid}}
+</div>
