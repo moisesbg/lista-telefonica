@@ -36,5 +36,11 @@ angular.module("listaTelefonica").value("config", {
 		}
 		
 	});
+
+
+	$routeProvider.when('/error', {
+		templateUrl: 'view/paginaDeErro.html'
+	});
+
 	$routeProvider.otherwise({redirectTo: "/contatos"});
 })
