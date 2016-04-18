@@ -1,20 +1,3 @@
-angular.module("listaTelefonica").run(['$rootScope', '$location', function ($rootScope, $location) {
-    $rootScope.$on("$routeChangeError", function (event, current, previous, error) {
-        //Alterar o código para manipular o erro de alguma forma
-        console.log("evento de erro");
-        //console.log(event);
-        console.log(current);
-        console.log(previous);
-        console.log(error);
-
-        $location.path('/error');
-
-        //console.log($rootScope);
-        //console.log($location)
-        console.log("fim");
-        //window.self.location.href = "view/paginaDeErro.html";
-    });
-}]);
 angular.module("listaTelefonica").controller("listaTelefonicaCtrl",
     function ($scope, $filter, contatosAPI, operadorasAPI, serialGenerator, $route) {
         $scope.app = "Lista Telefônica";

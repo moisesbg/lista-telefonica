@@ -12,7 +12,7 @@ angular.module("listaTelefonica").controller("novoContatoCtrl",
                     $location.path("/contatos");
             })
         .error(function(data,status) {
-            $scope.message = "Aconteceu um problema: "+data;
+            $scope.message = "Aconteceu um problema ao adicionar o contato: "+data;
         });
     };
  

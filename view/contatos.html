@@ -1,11 +1,13 @@
 <div class="jumbotron" >
+        <!-- Exemplo da utilização do accordion 
         <ui-accordions>
             <ui-accordion title="Accordion 1">Teste do conteudo 1</ui-accordion>
             <ui-accordion title="Accordion 2">Teste do conteudo 2</ui-accordion>
-        </ui-accordions>    
+        </ui-accordions>    -->
+        
         <!--por padrao a diretiva compartilha o escopo de onde ela está sendo utilizada. Para verificar um escopo, utiliza-se $id 
           Para isolar o escopo da diretiva, deve-se declarar a propriedade scope na diretiva.Isto fará com que ela não
-          acesse mais os atributos e variáveis do scope de onde ela está sendo utilizada. Esse comportamento é interessante para
+          acesse mis os atributos e variáveis do scope de onde ela está sendo utilizada. Esse comportamento é interessante para
           garantir isolamento e evitar o acoplamento dos objetos. -->
         <ui-alert title="Ops, aconteceu um problema..." message="error" ng-show="(error.length > 0)">
             Exemplo do transclude, este texto irá aparecer dentro do template
@@ -14,9 +16,10 @@
         
         <h3 ng-bind="app"></h3>
         <!-- <h4> {{app}} </h4> -> tem o mesmo efeito que a linha acima -->
-        {{contatos}}
+        <!-- Exemplo de como injetar o conteúdo do escopo do AngularJS, diretamente na página HTML
+             {{contatos}} -->
         <input type="text" class="form-control" ng-model="criterioDeBusca" placeholder="Informe o que você deseja procurar..."/>
-        {{message}}
+        
         <table class="table table-striped">
             <tr>
                 <th></th>
@@ -55,5 +58,5 @@
         na página caso não haja contato selecionado, e é criado dinâmicamente quando o contato é selecionado e destruído quando o contato é deselecionado
         <button class="btn btn-danger btn-block " ng-click= "apagarContatos(contatos)" ng-hide="!isContatoSelecionado(contatos)" >Apagar Conatatos</button> -->   
 
-          <br> {{contato}}
+          <br> 
     </div>

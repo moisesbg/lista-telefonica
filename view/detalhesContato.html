@@ -1,14 +1,12 @@
 <div class="jumbotron">
-	<table class="table">
-		<tr>
-			<td>{{contato.nome}}</td>
-		</tr>
-		<tr>
-			<td>{{contato.telefone}}</td>
-		</tr>
-		<tr>
-			<td>{{contato.data | date:"dd/MM/yyyy"}}</td>
-		</tr>
-	</table>
+	<ui-accordions>
+		<ui-accordion title="{{contato.nome}}">
+		    ID: {{contato.id}} <br>
+		    Telefone: {{contato.telefone}} <br>
+		    Data: {{contato.data | date:"dd/MM/yyyy"}} <br>
+		    Operadora: {{contato.operadora}}<br>
+	    </ui-accordion>
+	</ui-accordions>    
 	<a href="#/contatos">Voltar</a>
 </div>
+

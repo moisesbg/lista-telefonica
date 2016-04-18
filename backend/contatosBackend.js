@@ -5,9 +5,9 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.bodyParser());
 
 var contatos = [
-	{id: 1, nome: "bruno da silva",  telefone: "9999-2222", data: new Date(1982,3,12), operadora: {nome: "Oi",   codigo: 14, categoria: "Celular"}},
-	{id: 2, nome: "SANDRA MARIA",    telefone: "9999-3333", data: new Date(1985,8,29), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular"}},
-	{id: 3, nome: "Mariana MACHADO", telefone: "9999-9999", data: new Date(1976,1,27), operadora: {nome: "Tim",  codigo: 41, categoria: "Celular"}}
+	{ id: 1, nome: "bruno da silva",  telefone: "9999-2222", data: new Date(1982,3,12), operadora: {nome: "Oi",   codigo: 14, categoria: "Celular"}},
+	{ id: 2, nome: "SANDRA MARIA",    telefone: "9999-3333", data: new Date(1985,8,29), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular"}},
+	{ id: 3, nome: "Mariana MACHADO", telefone: "9999-9999", data: new Date(1976,1,27), operadora: {nome: "Tim",  codigo: 41, categoria: "Celular"}}
 ];
 var operadoras = [
 	{nome: "Oi", codigo: 14, categoria: "Celular", preco: 2},
@@ -35,7 +35,9 @@ app.get('/contatos/:id', function(req, res) {
 });
 
 app.post('/contatos', function(req, res) {
-  contatos.push(req.body);
+  contato = req.body;
+  contato.id =  contatos.length > 0 ? contatos[contatos.length - 1].id + 1 : 1;
+  contatos.push(contato);
   res.json(true);
 });
 
